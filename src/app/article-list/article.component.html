@@ -1,5 +1,15 @@
 
+
+
+
+
 <div class="border border-rose-800 m-5 p-5">
+  <p class="font-bold"> Content Projection goes here:</p>
+<ng-content ></ng-content>
+
+
+
+
   <p class="font-bold text-rose-800">Child component inside the red box</p>
   <p class="font-medium text-rose-800 p-5">Category Name: <code class="text-green-800">{{category_name}}</code></p>
   <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900" (click)="passDataToMyParent(1000)">Send Data to Parent <code>(data =10000)</code></button>

@@ -16,7 +16,10 @@ liked = new EventEmitter();
 
  content !:string ;
  author_name!:string;
+
  article= {id:1,title:'choumy is handsome'};
+
+ student_name = 'Vanrith';
 
 
 
