@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 
 import { ArticleComponent } from './article.component';
+import { ArticleService } from 'src/app/service/article.service';
+import { IArticle } from './../../model/iarticle';
 
 @Component({
   selector: 'app-article-list',
@@ -8,29 +10,18 @@ import { ArticleComponent } from './article.component';
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit, AfterViewInit,OnChanges {
-   data_from_child!:any;
-   data_to_child!:string;
-   student_name!:string;
+test =['']
+articles!: IArticle[] ;
 
-
-  @ViewChild(ArticleComponent)
-  childComponent!:ArticleComponent;
-
-
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
-    this.student_name='Kimhab';
+   this.articles = this.articleService.article_list;
+
 
   }
 
-  getDataFromChild(name: string){
-    this.data_from_child = name;
 
-  }
-  setCategoryName(){
-    this.data_to_child='Novel';
-  }
   ngAfterViewInit(): void {
 
   }

@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+import { ArticleService } from 'src/app/service/article.service';
+import { IArticle } from 'src/app/model/iarticle';
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -7,6 +10,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
+  articles1 !:IArticle[];
+
+
+
+
+
+
+
+
+  user_list = [{ name: 'SeavPinh', subject: 'Spring' },
+  { name: 'SingChheng', subject: 'Blockchain' },
+  { name: 'Choumy', subject: 'Data Analytics' },
+  { name: 'Kimhab', subject: 'Big Data' }
+
+
+
+  ]
 @Input()
 category_name!:string;
 
@@ -23,7 +43,7 @@ liked = new EventEmitter();
 
 
 
-  constructor() {
+  constructor(private articleService: ArticleService) {
     this.content = 'Hello Kimgech!';
    }
 
